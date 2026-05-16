@@ -1,49 +1,58 @@
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.20;
+# ARC2 - Advanced Smart Contracts Suite 🚀
 
-import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+Welcome to the **ARC2** repository! This project contains a collection of 4 production-grade, highly optimized, and unique smart contracts designed for the ARC Chain. Each contract implements modern Solidity patterns, strict access controls, custom gas-efficient errors, and security best practices.
 
-contract ArcSimpleDEX {
-    IERC20 public tokenA;
-    IERC20 public tokenB;
+---
 
-    uint200 public reserveA;
-    uint200 public reserveB;
+## 🛠 Projects Overview
 
-    constructor(address _tokenA, address _tokenB) {
-        tokenA = IERC20(_tokenA);
-        tokenB = IERC20(_tokenB);
-    }
+### 1. 💸 CryptoStreamer
+A time-based salary and token streaming protocol. It allows employers to stream funds to employees continuously over time, based on block timestamps, ensuring smooth and automated payrolls without manual monthly interventions.
+* **Key Features:** Real-time balance calculations, automated stream cancellation, and optimized math.
+* **Tech Used:** Solidity `0.8.20`, Block Timestamps.
 
-    // Add Liquidity to the pool
-    function addLiquidity(uint _amountA, uint _amountB) external {
-        tokenA.transferFrom(msg.sender, address(this), _amountA);
-        tokenB.transferFrom(msg.sender, address(this), _amountB);
-        
-        reserveA += uint200(_amountA);
-        reserveB += uint200(_amountB);
-    }
+### 2. 🤝 Freelancer Escrow & Arbitration
+A secure, trustless decentralized escrow protocol for global freelancing. Funds are safely locked in the contract by the buyer and only released upon successful project completion. Includes a built-in third-party Arbitrator system to resolve disputes fairly.
+* **Key Features:** State Machine Architecture (`Initialized`, `Completed`, `Released`, `Disputed`), Custom Arbitrator Logic, ERC20 Compatible (USDC/USDT).
+* **Tech Used:** OpenZeppelin `IERC20`, State Enums.
 
-    // Swap Token A for Token B
-    // Formula: (x + dx) * (y - dy) = x * y
-    function swapAforB(uint _amountAIn) external returns (uint amountBOut) {
-        require(_amountAIn > 0, "Amount must be > 0");
-        
-        // Calculate amount out using x * y = k
-        uint amountAWithFee = (_amountAIn * 997) / 1000; // 0.3% fee
-        amountBOut = (reserveB * amountAWithFee) / (reserveA + amountAWithFee);
+### 3. 🗳 Gasless Voting System (Meta-Transactions)
+An advanced governance/voting contract that allows users to cast votes **without paying any gas fees**. Voters sign a cryptographic message off-chain via MetaMask, and a relayer submits the signature to the blockchain, covering the gas costs.
+* **Key Features:** Cryptographic Signature Verification, Replay Attack Protection, Fully Decentralized.
+* **Tech Used:** OpenZeppelin `ECDSA`, `MessageHashUtils` (EIP-712 Concepts).
 
-        tokenA.transferFrom(msg.sender, address(this), _amountAIn);
-        tokenB.transfer(msg.sender, amountBOut);
+### 4. 🎟 NFT-Gated Raffle / Lottery
+A fair, automated lottery system restricted exclusively to specific NFT holders. Only users holding at least one token from the required ERC721 collection can buy a ticket. The winner selection utilizes a safe, multi-source pseudo-randomness mechanism.
+* **Key Features:** ERC721 Token Gating, Multi-source Randomness (`gasleft()`, `timestamp`), Automatic Next-Round Extensions.
+* **Tech Used:** OpenZeppelin `IERC721`, Pseudo-Random Generator.
 
-        reserveA += uint200(_amountAIn);
-        reserveB -= uint200(amountBOut);
-    }
+---
 
-    // Helper to check current price
-    function getPrice(address _token) external view returns (uint) {
-        return (_token == address(tokenA)) 
-            ? (reserveB * 1e18) / reserveA 
-            : (reserveA * 1e18) / reserveB;
-    }
-}# ARC2
+## ⚡ Key Architecture & Optimization Highlights
+
+* **Gas Optimization:** Replaced traditional `require` string reverts with Solidity **Custom Errors** (`error CustomError()`), reducing gas costs significantly during execution failures.
+* **Security:** Strict access control modifiers (`onlyOwner`, `onlyBuyer`, `onlyFreelancer`), safe low-level `.call` methods for transferring native currencies, and precise balance validation checks.
+* **EVM Compatibility:** Configured specifically for deployment on EVM-compatible chains like the **ARC Chain**.
+
+---
+
+## 🚀 Deployment & Testing Guide
+
+All contracts have been successfully compiled and deployed using **Remix IDE** via **MetaMask** on the ARC Network.
+
+### Prerequisites
+* [Node.js](https://nodejs.org/) & [MetaMask](https://metamask.io/) installed.
+* ARC Testnet configured in MetaMask with faucet funds.
+
+### Steps to Run on Remix:
+1. Clone this repository or copy the `.sol` files.
+2. Open [Remix IDE](https://remix.ethereum.org/).
+3. In the **Solidity Compiler** tab, set the Compiler version to `0.8.20` and select **EVM Version** as `paris` or `london`.
+4. In the **Deploy & Run Transactions** tab, change the Environment to **Injected Provider - MetaMask**.
+5. Select your desired contract and click **Deploy**.
+
+---
+
+## 📄 License
+
+This repository is licensed under the **MIT License**. Feel free to use, modify, and distribute these contracts.
