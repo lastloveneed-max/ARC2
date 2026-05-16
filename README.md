@@ -4,6 +4,17 @@ Welcome to the **ARC2** repository! This project contains a collection of 4 prod
 
 ---
 
+## 🌐 Deployed Contract Addresses (Live on ARC Testnet)
+
+All contracts have been successfully deployed and verified on the Arc Network Testnet:
+
+* 💸 **CryptoStreamer:** `0x37C2F6EFEA04279FE6Fda00beF5E30B60641f97b`
+* 🤝 **FreelancerEscrow:** `0x8a04b1212260B497746400De1F53f40f2375f3B3`
+* 🗳 **GaslessVoting:** `0xCF50a0fC820932468840c8F657a8aC94FdA41B8d`
+* 🎟 **NFTGatedLottery:** `0x3caD54F6aBc46Dba8D4D63dfC4A4b1b36be3cfe1`
+
+---
+
 ## 🛠 Projects Overview
 
 ### 1. 💸 CryptoStreamer
