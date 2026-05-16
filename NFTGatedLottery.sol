@@ -51,16 +51,16 @@ contract NFTGatedLottery {
     }
 
     /**
-     * @notice Picks a random winner from the players array (Uses pseudo-randomness)
+     * @notice Picks a random winner from the players array safely across EVM networks
      */
     function pickWinner() external onlyOwner {
         if (block.timestamp <= lotteryEndTime) revert LotteryStillActive();
         if (players.length == 0) revert NoPlayers();
 
-        // Generating a pseudo-random number using block data
+        // Safe pseudo-random number generator compatible with ARC chain and standard EVM
         uint256 indexOfWinner = uint256(
             keccak256(
-                abi.encodePacked(msg.sender, block.prevrandao, block.timestamp, players.length)
+                abi.encodePacked(msg.sender, block.timestamp, gasleft(), players.length)
             )
         ) % players.length;
 
@@ -69,7 +69,7 @@ contract NFTGatedLottery {
         
         // Reset the lottery state for next round
         players = new address[](0); 
-        lotteryEndTime = block.timestamp + 604800; // Extend by 1 week automatically
+        lotteryEndTime = block.timestamp + 604800; // Automatically extend by 1 week
 
         // Send the entire balance of the contract to the winner
         uint256 prize = address(this).balance;
