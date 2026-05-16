@@ -2,7 +2,7 @@
 pragma solidity ^0.8.20;
 
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
-import "@openzeppelin/contracts/utils/math/Math; // Added for safe math operations
+import "@openzeppelin/contracts/utils/math/Math.sol"; // Added for safe math operations
 
 // Custom Errors for Gas Optimization
 error InvalidEmployeeAddress();
