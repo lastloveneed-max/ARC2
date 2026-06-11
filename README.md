@@ -8,10 +8,10 @@ Welcome to the **ARC2** repository! This project contains a collection of 4 prod
 
 All contracts have been successfully deployed and verified on the Arc Network Testnet:
 
-* 💸 **CryptoStreamer:** `0x37C2F6EFEA04279FE6Fda00beF5E30B60641f97b`
-* 🤝 **FreelancerEscrow:** `0x8a04b1212260B497746400De1F53f40f2375f3B3`
-* 🗳 **GaslessVoting:** `0xCF50a0fC820932468840c8F657a8aC94FdA41B8d`
-* 🎟 **NFTGatedLottery:** `0x3caD54F6aBc46Dba8D4D63dfC4A4b1b36be3cfe1`
+* 💸 **CryptoStreamer:** `0x37C5C84A8085454de70eaeE36328120aa491f97b`
+* 🤝 **FreelancerEscrow:** `0x8a0cE00De9EB5577a52a8d827aec3E816765f3B3`
+* 🗳 **GaslessVoting:** `0xCF58270Ab39aD4eCc97455F01c32A343DF641B8d`
+* 🎟 **NFTGatedLottery:** `0x3ca70E29a6c85634C2bA6eDf00D30f4A9b53cfe1`
 
 ---
 
