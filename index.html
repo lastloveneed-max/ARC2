@@ -4,41 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ARC2 Smart Contract Suite</title>
-    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js" type="text/javascript"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f9f9f9; }
-        .section { background: white; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        button { background-color: #4CAF50; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; }
-        button:hover { background-color: #45a049; }
-        #connectWallet { background-color: #008CBA; float: right; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
     </style>
 </head>
-<body>
+<body class="bg-[#0b0f19] text-gray-100 min-h-screen selection:bg-purple-500 selection:text-white">
 
-    <button id="connectWallet">Connect Wallet</button>
-    <h1>ARC2 Smart Contract Suite 🚀</h1>
-    <hr>
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="absolute bottom-10 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px] pointer-events-none"></div>
 
-    <div class="section">
-        <h2>1. Crypto Streamer</h2>
-        <button id="startStreamBtn">Start Crypto Stream</button>
-    </div>
+    <header class="border-b border-gray-800/60 backdrop-blur-md sticky top-0 z-50 bg-[#0b0f19]/80">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <span class="text-2xl font-black bg-gradient-to-r from-purple-400 via-pink-500 to-blue-500 bg-clip-text text-transparent tracking-tight">
+                    ARC2 SUITE
+                </span>
+                <span class="px-2 py-0.5 text-[10px] font-bold tracking-wider uppercase bg-purple-500/10 text-purple-400 rounded-full border border-purple-500/20">
+                    Beta v2.0
+                </span>
+            </div>
+            <button class="flex items-center space-x-2 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white font-semibold py-2.5 px-5 rounded-xl shadow-lg shadow-purple-600/20 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 text-sm">
+                <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                <span>Wallet Connected</span>
+            </button>
+        </div>
+    </header>
 
-    <div class="section">
-        <h2>2. Freelancer Escrow</h2>
-        <button id="releaseFundsBtn">Release Escrow Funds</button>
-    </div>
+    <main class="max-w-7xl mx-auto px-6 py-12">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4">
+                Next-Gen <span class="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">Smart Contract</span> Suite
+            </h1>
+            <p class="text-gray-400 max-w-2xl mx-auto text-base md:text-lg">
+                Interact with secure, automated, and gas-efficient decentralized applications instantly.
+            </p>
+        </div>
 
-    <div class="section">
-        <h2>3. Gasless Voting</h2>
-        <button id="castVoteBtn">Cast Gasless Vote</button>
-    </div>
-
-    <div class="section">
-        <h2>4. NFT Gated Lottery</h2>
-        <button id="buyTicketBtn">Buy Lottery Ticket</button>
-    </div>
-
-    <script src="app.js"></script>
-</body>
-</html>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <div class="bg-[#111827]/40 border border-gray-800 hover:border-purple-500/40 rounded-2xl p-6 backdrop-blur-sm transition-all duration-300 group hover:shadow-xl hover:shadow-purple-500/5">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="p-3 bg-purple-500/10 rounded-xl text-purple-400 group-hover:scale-110 transition-transform duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                    </div>
+                    <span class="text-xs font-mono text-gray-500">01 / FEATURE</span>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">Crypto Streamer</h3>
+                <p class="text-gray-400 text-sm mb-6 leading-relaxed">Stream real-time crypto
