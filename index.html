@@ -2,28 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ARC2 Smart Contract Suite</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js" type="text/javascript"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f9f9f9; }
+        .section { background: white; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        button { background-color: #4CAF50; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; }
+        button:hover { background-color: #45a049; }
+        #connectWallet { background-color: #008CBA; float: right; }
+    </style>
 </head>
 <body>
+
+    <button id="connectWallet">Connect Wallet</button>
     <h1>ARC2 Smart Contract Suite 🚀</h1>
-    <button id="connectWallet">Connect MetaMask</button>
-    
     <hr>
-    <h2>1. Crypto Streamer</h2>
-    <button id="startStreamBtn">Start Crypto Stream</button>
 
-    <hr>
-    <h2>2. Freelancer Escrow</h2>
-    <button id="releaseFundsBtn">Release Escrow Funds</button>
+    <div class="section">
+        <h2>1. Crypto Streamer</h2>
+        <button id="startStreamBtn">Start Crypto Stream</button>
+    </div>
 
-    <hr>
-    <h2>3. Gasless Voting</h2>
-    <button id="castVoteBtn">Cast Gasless Vote</button>
+    <div class="section">
+        <h2>2. Freelancer Escrow</h2>
+        <button id="releaseFundsBtn">Release Escrow Funds</button>
+    </div>
 
-    <hr>
-    <h2>4. NFT Gated Lottery</h2>
-    <button id="buyTicketBtn">Buy Lottery Ticket</button>
+    <div class="section">
+        <h2>3. Gasless Voting</h2>
+        <button id="castVoteBtn">Cast Gasless Vote</button>
+    </div>
+
+    <div class="section">
+        <h2>4. NFT Gated Lottery</h2>
+        <button id="buyTicketBtn">Buy Lottery Ticket</button>
+    </div>
 
     <script src="app.js"></script>
 </body>
