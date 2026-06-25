@@ -3,10 +3,10 @@ let provider;
 let signer;
 
 // 1. Paste your deployed contract addresses here from Remix IDE
-const cryptoStreamerAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3"; // Example Address
-const escrowAddress = "0x8a0cE00De9EB5577a52a8d827aec3E816765f3B3";         // Put Escrow Address here
-const votingAddress = "0xCF58270Ab39aD4eCc97455F01c32A343DF641B8d";         // Put Voting Address here
-const lotteryAddress = "0x3ca70E29a6c85634C2bA6eDf00D30f4A9b53cfe1";        // Put Lottery Address here
+const cryptoStreamerAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3" ; // Example Address
+const escrowAddress = "0x8a0cE00De9EB5577a52a8d827aec3E816765f3B3" ; // Put Escrow Address here
+const votingAddress = "0xCF58270Ab39aD4eCc97455F01c32A343DF641B8d" ; // Put Voting Address here
+const lotteryAddress = "0x3ca70E29a6c85634C2bA6eDf00D30f4A9b53cfe1" ; // Put Lottery Address here
 
 // 2. ABIs (Solidity Compiler tab theke copy kore ekhane paste korun)
 const cryptoStreamerABI = [
