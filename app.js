@@ -3,7 +3,7 @@ let provider;
 let signer;
 
 // 1. Deployed contract addresses
-const cryptoStreamerAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3"; 
+const cryptoStreamerAddress = "0x37C5C84A8085454de70eaeE36328120aa491f97b"; 
 const escrowAddress = "0x8a0cE00De9EB5577a52a8d827aec3E816765f3B3"; 
 const votingAddress = "0xCF58270Ab39aD4eCc97455F01c32A343DF641B8d"; 
 const lotteryAddress = "0x3ca70E29a6c85634C2bA6eDf00D30f4A9b53cfe1"; 
