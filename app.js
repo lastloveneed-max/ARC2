@@ -128,9 +128,11 @@ async function buyTicket() {
     }
 }
 
-// Event Listeners
+// Event Listeners (Eigulo thakle button click kaj korbe)
 document.getElementById('connectWallet').onclick = connectWallet;
 document.getElementById('startStreamBtn').onclick = startStream;
 document.getElementById('releaseFundsBtn').onclick = releaseEscrow;
+document.getElementById('castVoteBtn').onclick = castVote;
+document.getElementById('buyTicketBtn').onclick = buyTicket;
 document.getElementById('castVoteBtn').onclick = castVote;
 document.getElementById('buyTicketBtn').onclick = buyTicket;
